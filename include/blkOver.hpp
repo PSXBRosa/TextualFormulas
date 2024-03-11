@@ -6,14 +6,12 @@ namespace blk {
 
   class Over : public Block {
   private:
-    
+
     expr op1;
     expr op2;
 
     // These functions make auxiliary size and ref computation for the
-    // resulting block, from the two operands. Use them as arguments
-    // to the conctruction of super class Block in the Beside
-    // constructor.
+    // resulting block, from the two operands.
     static int compute_width     (expr op1, expr op2){
       return compute_ref_width(op1, op2) + std::max(op1 -> get_ref_width(), op2 -> get_ref_width());
     }
@@ -29,9 +27,9 @@ namespace blk {
     static int compute_ref_height(expr op1, expr op2){
       return op1 -> get_ref_height();
     }
-    
+
   public:
-    
+
     Over(expr op1, expr op2);
     virtual ~Over() {}
     virtual void print_inbounds_line(std::ostream& os, int line) const override;

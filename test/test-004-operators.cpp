@@ -1,5 +1,4 @@
 #include <iostream>
-
 #include <blk.hpp>
 
 int main(int argc, char* argv[]) {
@@ -17,14 +16,14 @@ int main(int argc, char* argv[]) {
 /*
    Output:
 
-  -5 :                     x               
-  -4 :                 z + -               
-  -3 :                     y               
-  -2 :              ----------- + 3.14     
-  -1 :      y        x + y + z             
+  -5 :                     x
+  -4 :                 z + -
+  -3 :                     y
+  -2 :              ----------- + 3.14
+  -1 :      y        x + y + z
    0 :   ------- = -------------------- = x
-   1 :    z + x                z           
-   2 :                  x + -------        
-   3 :                       y + 3     
+   1 :    z + x                z
+   2 :                  x + -------
+   3 :                       y + 3
 
 */

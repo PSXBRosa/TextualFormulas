@@ -3,10 +3,10 @@
 
 namespace blk {
 
-  struct align {
-    static const int center = 0;
-    static const int right  = 1;
-    static const int left   = 2;
+  enum align {
+    center = 0,
+    right  = 1,
+    left   = 2,
   };
 
   class Text : public Block {
@@ -20,11 +20,11 @@ namespace blk {
       int pos;
       int compute_rel_width(std::string label, int pos){
         switch(pos){
-          case 2:
+          case align::left:
             return 0;
-          case 1:
+          case align::right:
             return label.size() - 1;
-          case 0:
+          case align::center:
             return label.size() / 2;
         }
         return 0;
@@ -36,4 +36,5 @@ namespace blk {
 
   expr text(std::string label, int pos);
   expr text(std::string label);
- }
+  expr from_value(double value);
+}

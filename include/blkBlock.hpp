@@ -10,10 +10,10 @@ namespace blk {
   using expr = std::shared_ptr<const Block>;
 
   std::ostream& operator<<(std::ostream& os, expr e);
-  
+
   class Block {
   private:
-    
+
     int width;
     int height;
     int ref_width;
@@ -28,29 +28,24 @@ namespace blk {
   public:
     // Prints any line. If the line is outside the block, it prints a
     // range of spaces. Otherwise, it calls print_inbounds_line to
-    // print the block content at that line. We declare this method
-    // public for now, but this will have to be reconsider later, in
-    // the "better design" part of the labwork.
+    // print the block content at that line.
     void print_line(std::ostream& os, int line) const;
-    
+
   private:
 
-    // This will call the private min_line and max_line methods, this
-    // is why it has to be a friend of the class.
+    // This will call the private min_line and max_line methods.
     friend std::ostream& operator<<(std::ostream& os, expr block);
-    
+
   public:
 
-    Block(int width, 
+    Block(int width,
 	  int height,
 	  int ref_width,
 	  int ref_height);
     virtual ~Block() {}
 
     // This prints the line numbered line, if line is in [min_line(),
-    // max_line()[.  Do not implement this method in the blkBlock.cpp
-    // file, it is a pure virtual. The inherited class will have to
-    // implement the method, defining their own way to print a line.
+    // max_line()[.
     virtual void print_inbounds_line(std::ostream& os, int line) const = 0;
 
     int get_width()      const;

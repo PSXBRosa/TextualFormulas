@@ -7,12 +7,11 @@
 #include "blkMoveRef.hpp"
 #include "blkText.hpp"
 
-namespace blk {
-  expr from_value(double value) {
-    std::ostringstream ostr;
-    ostr << value;
-    return text(ostr.str());
-  }
+
+blk::expr blk::from_value(double value) {
+  std::ostringstream ostr;
+  ostr << value;
+  return blk::text(ostr.str());
 }
 
 blk::expr blk::operator+(blk::expr a, blk::expr b) {
@@ -22,7 +21,7 @@ blk::expr blk::operator+(blk::expr a, blk::expr b) {
 blk::expr blk::operator==(blk::expr a, blk::expr b) {
   return beside(a, beside(text(" = "), b));
 }
-		   
+
 blk::expr blk::operator/(blk::expr a, blk::expr b) {
   auto num   = move_ref(a, a->get_width()/2, 0);
   auto denom = move_ref(b, b->get_width()/2, 0);
