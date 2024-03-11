@@ -1,0 +1,3 @@
+/home/pedro/Documentos/Projects/CS/C++/blocks/build/CMakeFiles/TextualFormulas.dir
+/home/pedro/Documentos/Projects/CS/C++/blocks/build/CMakeFiles/edit_cache.dir
+/home/pedro/Documentos/Projects/CS/C++/blocks/build/CMakeFiles/rebuild_cache.dir
